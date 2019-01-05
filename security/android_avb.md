@@ -13,9 +13,13 @@ vbmeta包含了需要验证的image对应的描述，描述有三种类型：
 * Chained descriptor
 
 下面这个图是最常见的情景
+
 ![avb vbmeta struct](images/vbmeta_struct.png)
+
 下面这个图是带有chained image的情景，主要用于分开验证某些image
+
 ![avb vbmeta struct with chained](images/vbmeta_struct_chain.png)
+
 ### avb状态说明
 avb启动标准中有4中状态
 
