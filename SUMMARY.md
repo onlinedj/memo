@@ -1,4 +1,4 @@
-# 目录
+* [简介](README.md)
 * 系统安全
     * [avb总结](security/android_avb.md)
 * ARM架构总结
