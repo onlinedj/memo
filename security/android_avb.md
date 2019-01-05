@@ -6,11 +6,13 @@
 ### vbmeta结构说明
 * 在vb1.0中，从A到D，安全启动链上每一个image都包含一个签名，按照顺序一级一级的校验签名（此处先不考虑dmverity）
 * 在vb2.0中，A负责校验vbmeta image的签名，vbmeta包含了BCD的描述（descriptor），通常情况下是保存BCD的hash，可以用于验证BCD的完整性，解决了多次校验签名启动慢的问题，同时可以集中在更底层去校验来保证合法性和多images的一致性。
+
 ![vb 1.0 vs vb 2.0](images/v1_vs_v2.png)
-vbmeta包含了需要验证的image对应的描述，描述有三种类型：
-* Hash descriptor
-* Hash tree descriptor
-* Chained descriptor
+
+* vbmeta包含了需要验证的image对应的描述，描述有三种类型：
+    * Hash descriptor
+    * Hash tree descriptor
+    * Chained descriptor
 
 下面这个图是最常见的情景
 
