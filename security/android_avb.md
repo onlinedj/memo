@@ -1,16 +1,18 @@
-## 什么是avb
+### 什么是avb
 * avb全称 android verified boot,是为android设计的一套安全启动软件,用来保证软件的完整性
 * avb的上一版本是来自chrome的verified boot,简称vb1.0,所以也称avb是vb2.0
 * avb较上一版本改动较大，增加了vbmeta的结构，重新设计了校验流程，下一节详细介绍
 
 ### vbmeta结构说明
-* 在vb1.0中，从A到D，安全启动链上每一个image都包含一个签名，按照顺序一级一级的校验签名（此处先不考虑dmverity）
-* 在vb2.0中，A负责校验vbmeta image的签名，vbmeta包含了BCD的描述（descriptor），通常情况下是保存BCD的hash，可以用于验证BCD的完整性，解决了多次校验签名启动慢的问题，同时可以集中在更底层去校验来保证合法性和多images的一致性。
+* 假设有4个image链式启动
+    * 在vb1.0中，从A到D，安全启动链上每一个image都包含一个签名，按照顺序一级一级的校验签名。
+    * 在vb2.0中，A负责校验vbmeta结构的签名，vbmeta结构除了自己的签名和公钥，还包含了B/C/D的描述（descriptor），可以用于验证B/C/D的完整性和合法性。
 
 ![vb 1.0 vs vb 2.0](images/v1_vs_v2.png)
 
 * vbmeta包含了需要验证的image对应的描述，描述有三种类型：
     * Hash descriptor
+        * 此类型主要包含
     * Hash tree descriptor
     * Chained descriptor
 
