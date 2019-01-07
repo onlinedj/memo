@@ -12,7 +12,15 @@
 
 * vbmeta包含了需要验证的image对应的描述，描述有三种类型：
     * Hash descriptor
-        * 此类型主要包含
+    ```
+      Hash descriptor:
+      Image Size:            14884864 bytes
+      Hash Algorithm:        sha256
+      Partition Name:        boot
+      Salt:                 d0f619c40f9a51b1c575a415b918534c9a3dab5ec2508780e0e22b8029c3b48b
+      Digest:          b4b6fe48c770101cda91a7188b275cfbbf2ec0ec68ee7d1cd3534cb7205066d0
+      Flags:                 0
+    ```
     * Hash tree descriptor
     * Chained descriptor
 
